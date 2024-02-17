@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/brookling', function () {
-    return view('index');
-});
+
+// Route::get('/layout', function () {
+//     return view('layout');
+// });
+
+// Route::get('/home', function () {
+//     return view('home');
+// });
+
+Route::get("/",[ClienteController::class, 'showHome']);
+Route::get('/cadastro-cliente',[ClienteController::class,'showformularioCadastro']);
+Route::get('/cadastro-funcionario',[ClienteController::class,'showformularioCadastroFun']);
