@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
 
-<img src="assets/hotel-visao.jpg" style="width: 100%;" >
+<style>
+    #bg{
+        width: 100%;
+        height: 100vh;
+    }
+</style>
+
+<img id="bg" src="assets/hotel-visao.jpg" >
 
 @endsection
