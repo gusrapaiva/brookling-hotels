@@ -27,3 +27,4 @@ Route::get("/",[ClienteController::class, 'showHome']);
 Route::get('/cadastro-cliente',[ClienteController::class,'showformularioCadastro']);
 Route::get('/cadastro-funcionario',[FuncionariosController::class,'showformularioCadastroFun']);
 Route::post('/cadastro-cliente', [ClienteController::class,'cadCliente'])->name('envia-db-clie');
+Route::post('/cadastro-funcionario', [FuncionariosController::class,'cadFunc'])->name('envia-db-func');
