@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ClienteController extends Controller
 {
@@ -14,7 +16,14 @@ class ClienteController extends Controller
     return view("formularioCadastroClie");
     }
 
-    public function showFormularioCadastroFun(Request $request){
-    return view("formularioCadastroFun");
+    public function CadCliente(Request $request){
+        $dadosValidos = $request->validate([
+            'nome' => 'string|required',
+            'email' => 'string|required',
+            'fone' => 'string|required'
+        ]);
+
+        Cliente::create($dadosValidos);
+        return Redirect::to('/');
     }
 }

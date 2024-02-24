@@ -12,7 +12,7 @@
 <body>
 
     <!-- navbar bootstrap -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar relative-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Hotel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

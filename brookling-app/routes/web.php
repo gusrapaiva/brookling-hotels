@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FuncionariosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +25,5 @@ use App\Http\Controllers\ClienteController;
 
 Route::get("/",[ClienteController::class, 'showHome']);
 Route::get('/cadastro-cliente',[ClienteController::class,'showformularioCadastro']);
-Route::get('/cadastro-funcionario',[ClienteController::class,'showformularioCadastroFun']);
+Route::get('/cadastro-funcionario',[FuncionariosController::class,'showformularioCadastroFun']);
+Route::post('/cadastro-cliente', [ClienteController::class,'cadCliente'])->name('envia-db-clie');
