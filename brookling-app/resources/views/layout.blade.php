@@ -57,12 +57,12 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Quarto
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{{'/cadastro-quarto'}}">Cadastrar</a></li>
                             <li><a class="dropdown-item" href="#">Pesquisar</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -70,12 +70,12 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Reserva
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{{'/cadastro-reserva'}}">Cadastrar</a></li>
                             <li><a class="dropdown-item" href="#">Pesquisar</a></li>
                             <li>
                                 <hr class="dropdown-divider">

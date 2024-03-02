@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\funcionarios;
+use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class FuncionariosController extends Controller
+class FuncionarioController extends Controller
 {
     public function showFormularioCadastroFun(Request $request){
         return view("formularioCadastroFun");
@@ -15,11 +15,10 @@ class FuncionariosController extends Controller
     public function cadFunc(Request $request){
         $dadosValidos = $request->validate([
             'nome' => 'string|required',
-            'email' => 'string|required',
-            'fone' => 'string|required'
+            'funcao' => 'string|required',
         ]);
 
-        funcionarios::create($dadosValidos);
+        funcionario::create($dadosValidos);
         return Redirect::to('/');
     }
 }

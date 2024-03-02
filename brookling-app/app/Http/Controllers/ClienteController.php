@@ -12,9 +12,15 @@ class ClienteController extends Controller
         return view("home");
     }
 
-    public function showFormularioCadastro(Request $request){
+    public function showFormularioCadastro(){
     return view("formularioCadastroClie");
     }
+
+    // public function showFormularioQuarto(){
+    //     return view("formularioCadastroQuarto");
+    // }
+
+
 
     public function CadCliente(Request $request){
         $dadosValidos = $request->validate([

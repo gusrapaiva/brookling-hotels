@@ -13,13 +13,8 @@
     </div>
 
     <div class="col-12">
-      <label for="inputEmail" class="form-label">Email:</label>
-      <input name="email" type="email" class="form-control" id="inputEmail" placeholder="leo007@gmail.com">
-    </div>
-
-    <div class="col-md-6">
-      <label for="inputFone" class="form-label">Fone:</label>
-      <input name="fone" type="tel" class="form-control" id="inputAddress" placeholder="11 95478-9654">
+      <label for="inputFuncao" class="form-label">Função</label>
+      <input name="funcao" type="text" class="form-control" id="inputFuncao" placeholder="Recepcionista">
     </div>
 
     <div class="col-12">
