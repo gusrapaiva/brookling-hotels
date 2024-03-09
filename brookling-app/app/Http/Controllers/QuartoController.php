@@ -13,11 +13,11 @@ class QuartoController extends Controller
         return view("formularioCadastroQuarto");
     }
 
-    public function CadQuarto(Request $request){
+    public function cadQuarto(Request $request){
         $dadosValidos = $request->validate([
-            'numero' => 'integer|required',
-            'tipo' => 'string|required',
-            'valor' => 'double|required'
+            'numeroQuarto' => 'integer|required',
+            'tipoQuarto' => 'string|required',
+            'valorDiario' => 'numeric|required'
         ]);
 
         quarto::create($dadosValidos);

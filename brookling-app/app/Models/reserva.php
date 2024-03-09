@@ -12,16 +12,10 @@ class reserva extends Model
     protected $fillable = [
         'idcliente',
         'idfuncionario',
-        'idquarto',
+        'numeroquarto',
         'situacao',
+        'valortotal',
+        'dataEntrada',
         'dataSaida',
     ];
 }
-
-// $table->id();
-// $table->id('idcliente');
-// $table->id('idfuncionario');
-// $table->id('idquarto');
-// $table->enum('situacao', ['Pago', 'Pendente']);
-// $table->timestamps('dataEntrada');
-// $table->date('dataSaida');

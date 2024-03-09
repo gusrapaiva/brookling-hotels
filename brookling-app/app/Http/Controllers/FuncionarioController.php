@@ -18,7 +18,7 @@ class FuncionarioController extends Controller
             'funcao' => 'string|required',
         ]);
 
-        funcionario::create($dadosValidos);
+        Funcionario::create($dadosValidos);
         return Redirect::to('/');
     }
 }

@@ -14,17 +14,13 @@ return new class extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('email');
-            $table->string('fone');
+            $table->string('funcao');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('funcionarios');
     }
 };
