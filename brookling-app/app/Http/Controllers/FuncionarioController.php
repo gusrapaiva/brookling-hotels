@@ -21,4 +21,8 @@ class FuncionarioController extends Controller
         Funcionario::create($dadosValidos);
         return Redirect::to('/');
     }
+
+    public function gerenciarFuncionario(){
+        return view('gerenciarFuncionario');
+    }
 }

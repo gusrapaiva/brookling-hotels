@@ -32,12 +32,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{'/cadastro-cliente'}}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Deletar</a></li>
-                            <li><a class="dropdown-item" href="#">Alterar</a></li>
+                            <li><a class="dropdown-item" href="{{'/gerenciar-cliente'}}">Gerenciar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -47,10 +42,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{'/cadastro-funcionario'}}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                            <li><a class="dropdown-item" href="{{'/gerenciar-funcionario'}}">Gerenciar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -60,10 +52,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{'/cadastro-quarto'}}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                            <li><a class="dropdown-item" href="{{'/gerenciar-quarto'}}">Gerenciar</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -73,10 +62,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{'/cadastro-reserva'}}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                            <li><a class="dropdown-item" href="{{'/gerenciar-reserva'}}">Gerenciar</a></li>
                         </ul>
                     </li>
                 </ul>

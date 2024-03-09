@@ -26,4 +26,8 @@ class ClienteController extends Controller
         Cliente::create($dadosValidos);
         return Redirect::to('/');
     }
+
+    public function gerenciarCliente(){
+        return view('gerenciarCliente');
+    }
 }
