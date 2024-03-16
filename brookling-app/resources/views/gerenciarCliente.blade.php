@@ -5,10 +5,10 @@
 
 <section class="container m-5">
   <div class="container m-5">
-    <form >
+    <form method="get" action="{{route('gerenciar-cliente')}}">
       <div class="row center">
         <div class="col">
-          <input type="text" id="marca" name="marca" class="form-control" placeholder="Digite dados do Cliente" aria-label="First name">
+          <input type="text" id="marca" name="nome" class="form-control" placeholder="Digite dados do Cliente" aria-label="First name">
         </div>
         <div class="col">
           <button type="submit" class="btn btn-info">Buscar</button>
@@ -22,28 +22,30 @@
         <th scope="col">Código</th>
         <th scope="col">Nome</th>
         <th scope="col">Email</th>
-        <th scope="col">Fone</th>
         <th scope="col">Editar</th>
         <th scope="col">Exluir</th>
       </tr>
     </thead>
     <tbody>
-     
+      @foreach($registrosClientes as $rcLoop)
       <tr>
-        <th scope="row">01</th>
-        <td>119897-999</td>
-        <td>Samsung</td>
+        <th scope="row">{{$rcLoop->id}}</th>
+        <td>{{$rcLoop->nome}}</td>
+        <td>{{$rcLoop->email}}</td>
         <td>
           <a href="">
             <button type="button" class="btn btn-primary">X</button>
           </a>
         </td>
-        
         <td>
-         xxx
+          <form method="post" action="{{route('apagar-cliente', $rcLoop->id)}}">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">X</button>
+          </form>
         </td>
       </tr>
-   
+      @endforeach
     </tbody>
   </table>
 </section>

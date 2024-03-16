@@ -30,8 +30,8 @@
      
       <tr>
         <th scope="row">01</th>
-        <td>119897-999</td>
-        <td>Samsung</td>
+        <td>Leonardo</td>
+        <td>10</td>
         <td>
           <a href="">
             <button type="button" class="btn btn-primary">X</button>

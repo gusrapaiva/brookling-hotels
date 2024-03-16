@@ -13,7 +13,11 @@ Route::get("/",[ClienteController::class, 'showHome']);
 // Grupo de Cliente
 Route::post('/cadastro-cliente', [ClienteController::class,'cadCliente'])->name('envia-db-clie');
 Route::get('/cadastro-cliente',[ClienteController::class,'showformularioCadastro']);
-Route::get('/gerenciar-cliente',[ClienteController::class,'gerenciarCliente']);
+Route::get('/gerenciar-cliente',[ClienteController::class,'gerenciarClienteShow'])->name('mostrar-cliente');
+
+Route::get('/gerenciar-cliente', [ClienteController::class, 'gerenciarCliente'])->name('gerenciar-cliente');
+Route::put('/alterar-cliente/{id}', [ClienteController::class, 'alterClie'])->name('alterar-cliente');
+Route::delete('/apagar-cliente/{id}', [ClienteController::class, 'destroy'])->name('apagar-cliente');
 
 // Grupo de Funcionario
 Route::get('/cadastro-funcionario',[FuncionarioController::class,'showformularioCadastroFun']);

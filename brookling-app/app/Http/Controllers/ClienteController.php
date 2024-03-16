@@ -27,7 +27,36 @@ class ClienteController extends Controller
         return Redirect::to('/');
     }
 
-    public function gerenciarCliente(){
-        return view('gerenciarCliente');
+    public function gerenciarClienteShow(Cliente $id){
+
+        return view('xxxx',['registrosClientes' => $id]);
     }
+    
+    public function gerenciarCliente(Request $request){
+        $dadosCliente = Cliente::query();
+        $dadosCliente->when($request->nome, function($query, $valor){
+            $query->where('nome','like','%'.$valor.'%');
+        });
+        $dadosCliente = $dadosCliente->get();
+
+        return view('gerenciarCliente',['registrosClientes' => $dadosCliente]);
+    }
+
+    public function destroy(Cliente $id){
+        $id->delete();
+        return Redirect::to('/');
+    }
+
+    public function alterClie(Cliente $id, Request $request){
+        $dadosValidos = $request->validate([
+            'nome' => 'string|required',
+            'email' => 'string|required',
+            'fone' => 'string|required'
+        ]);
+        $id->fill($dadosValidos);
+        $id->save();
+        return Redirect::route('/');
+    }
+
+
 }

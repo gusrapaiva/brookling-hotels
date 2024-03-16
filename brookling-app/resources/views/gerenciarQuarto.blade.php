@@ -31,8 +31,9 @@
      
       <tr>
         <th scope="row">01</th>
-        <td>119897-999</td>
-        <td>Samsung</td>
+        <td>200</td>
+        <td>Suíte</td>
+        <td>200.00</td>
         <td>
           <a href="">
             <button type="button" class="btn btn-primary">X</button>
