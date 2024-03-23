@@ -22,7 +22,23 @@ class FuncionarioController extends Controller
         return Redirect::to('/');
     }
 
-    public function gerenciarFuncionario(){
+    public function gerenciarFuncionarioShow(){
         return view('gerenciarFuncionario');
     }
+
+    public function gerenciarFuncionario(Request $request){
+        $dadosFunc = Funcionario::query();
+        $dadosFunc->when($request->nome, function($query, $valor){
+            $query->where('nome', 'like','%'.$valor.'%');
+        });
+        $dadosFunc = $dadosFunc->get();
+
+        return view('gerenciarFuncionario',['registroFuncionarios' => $dadosFunc]);
+    }
+
+    public function destroy(Funcionario $id){
+        $id->delete();
+        return Redirect::to('/');
+    }
+
 }

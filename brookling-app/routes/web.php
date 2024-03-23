@@ -22,12 +22,18 @@ Route::delete('/apagar-cliente/{id}', [ClienteController::class, 'destroy'])->na
 // Grupo de Funcionario
 Route::get('/cadastro-funcionario',[FuncionarioController::class,'showformularioCadastroFun']);
 Route::post('/cadastro-funcionario', [FuncionarioController::class,'cadFunc'])->name('envia-db-func');
-Route::get('/gerenciar-funcionario',[FuncionarioController::class,'gerenciarFuncionario']);
+Route::get('/gerenciar-funcionario',[FuncionarioController::class,'gerenciarFuncionarioShow'])->name('mostrar-funcionario');
+
+Route::get('/gerenciar-funcionario', [FuncionarioController::class, 'gerenciarFuncionario'])->name('gerenciar-funcionario');
+Route::delete('/apagar-funcionario/{id}', [FuncionarioController::class, 'destroy'])->name('apagar-funcionario');
 
 // Grupo de Quartos
 Route::get('/cadastro-quarto',[QuartoController::class,'showformularioCadastroQuarto']);
 Route::post('/cadastro-quarto', [QuartoController::class,'cadQuarto'])->name('envia-db-quarto');
-Route::get('/gerenciar-quarto',[QuartoController::class,'gerenciarQuarto']);
+Route::get('/gerenciar-quarto',[QuartoController::class,'gerenciarQuartoShow'])->name("mostrar-quarto");
+
+Route::get('/gerenciar-quarto', [QuartoController::class, 'gerenciarQuarto'])->name('gerenciar-quarto');
+Route::delete('/apagar-quarto/{id}', [QuartoController::class, 'destroy'])->name('apagar-quarto');
 
 // Grupo da Reserva
 Route::get('/cadastro-reserva',[ReservaController::class,'showformularioCadastroReserva']);

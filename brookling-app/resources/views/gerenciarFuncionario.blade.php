@@ -5,10 +5,10 @@
 
 <section class="container m-5">
   <div class="container m-5">
-    <form >
+    <form method="get" action="{{route('gerenciar-funcionario')}}">
       <div class="row center">
         <div class="col">
-          <input type="text" id="marca" name="marca" class="form-control" placeholder="Digite dados do Funcionário" aria-label="First name">
+          <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite dados do Funcionário" aria-label="First name">
         </div>
         <div class="col">
           <button type="submit" class="btn btn-info">Buscar</button>
@@ -27,22 +27,23 @@
       </tr>
     </thead>
     <tbody>
-     
+    @foreach($registroFuncionarios as $rfLoop)
       <tr>
-        <th scope="row">01</th>
-        <td>Leonardo</td>
-        <td>Manobrista</td>
+        <th scope="row">{{$rfLoop->id}}</th>
+        <td>{{$rfLoop->nome}}</td>
+        <td>{{$rfLoop->funcao}}</td>
         <td>
-          <a href="">
             <button type="button" class="btn btn-primary">X</button>
-          </a>
         </td>
-        
         <td>
-         xxx
-        </td>
+          <form method="post" action="{{route('apagar-funcionario', $rfLoop->id)}}">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">X</button>
+          </form>
+         </td>
       </tr>
-   
+    @endforeach
     </tbody>
   </table>
 </section>

@@ -5,10 +5,10 @@
 
 <section class="container m-5">
   <div class="container m-5">
-    <form >
+    <form method="get" action="{{route('gerenciar-quarto')}}">
       <div class="row center">
         <div class="col">
-          <input type="text" id="marca" name="marca" class="form-control" placeholder="Digite dados do Quarto" aria-label="First name">
+          <input type="text" id="numero" name="numero" class="form-control" placeholder="Digite o número do Quarto" aria-label="First name">
         </div>
         <div class="col">
           <button type="submit" class="btn btn-info">Buscar</button>
@@ -28,23 +28,24 @@
       </tr>
     </thead>
     <tbody>
-     
+    @foreach($registroQuartos as $rqLoop)
       <tr>
-        <th scope="row">01</th>
-        <td>200</td>
-        <td>Suíte</td>
-        <td>200.00</td>
-        <td>
-          <a href="">
-            <button type="button" class="btn btn-primary">X</button>
-          </a>
+        <th scope="row">{{$rqLoop->id}}</th>
+        <td>{{$rqLoop->numeroQuarto}}</td>
+        <td>Suíte{{$rqLoop->tipoQuarto}}</td>
+        <td>{{$rqLoop->valorDiario}}</td>
+        <td>        
+          <button type="button" class="btn btn-primary">X</button>
         </td>
-        
         <td>
-         xxx
+           <form method="post" action="{{route('apagar-funcionario', $rqLoop->id)}}">
+            @method('delete')
+            @csrf
+            <button type="submit" class="btn btn-danger">X</button>
+          </form>
         </td>
       </tr>
-   
+    @endforeach
     </tbody>
   </table>
 </section>
