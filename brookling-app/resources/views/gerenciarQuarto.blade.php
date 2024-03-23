@@ -38,7 +38,7 @@
           <button type="button" class="btn btn-primary">X</button>
         </td>
         <td>
-           <form method="post" action="{{route('apagar-funcionario', $rqLoop->id)}}">
+           <form method="post" action="{{route('apagar-quarto', $rqLoop->id)}}">
             @method('delete')
             @csrf
             <button type="submit" class="btn btn-danger">X</button>
