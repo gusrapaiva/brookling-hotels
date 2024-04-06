@@ -33,7 +33,9 @@
         <td>{{$rfLoop->nome}}</td>
         <td>{{$rfLoop->funcao}}</td>
         <td>
+          <a href="{{route('editar-funcionario', $rfLoop->id)}}">
             <button type="button" class="btn btn-primary">X</button>
+          </a>
         </td>
         <td>
           <form method="post" action="{{route('apagar-funcionario', $rfLoop->id)}}">

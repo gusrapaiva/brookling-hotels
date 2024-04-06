@@ -32,10 +32,10 @@
       <tr>
         <th scope="row">{{$rqLoop->id}}</th>
         <td>{{$rqLoop->numeroQuarto}}</td>
-        <td>Suíte{{$rqLoop->tipoQuarto}}</td>
+        <td>{{$rqLoop->tipoQuarto}}</td>
         <td>{{$rqLoop->valorDiario}}</td>
         <td>        
-          <button type="button" class="btn btn-primary">X</button>
+          <a href="{{route('editar-quarto', $rqLoop->id)}}"><button type="button" class="btn btn-primary">X</button></a>
         </td>
         <td>
            <form method="post" action="{{route('apagar-quarto', $rqLoop->id)}}">

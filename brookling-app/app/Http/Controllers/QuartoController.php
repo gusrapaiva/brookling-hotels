@@ -24,10 +24,6 @@ class QuartoController extends Controller
         return Redirect::to('/');
     }
 
-    public function gerenciarQuartoShow(){
-        return view('gerenciarQuarto');
-    }
-
     public function gerenciarQuarto(Request $request){
         $dadosQuarto = Quarto::query();
         $dadosQuarto->when($request->numero, function($query, $valor){
@@ -40,6 +36,21 @@ class QuartoController extends Controller
 
     public function destroy(Quarto $id){
         $id->delete();
+        return Redirect::to('/');
+    }
+
+    public function formAlterarQuarto(Quarto $id){
+        return view('formularioAlterQuarto', ['registroQuartos' => $id]);
+    }
+
+    public function alterarQuarto(Quarto $id, Request $request) {
+        $dadosValidos = $request->validate([
+            'numeroQuarto' => 'integer|required',
+            'tipoQuarto' => 'string|required',
+            'valorDiario' => 'numeric|required'
+        ]);
+        $id->fill($dadosValidos);
+        $id->save();
         return Redirect::to('/');
     }
 }

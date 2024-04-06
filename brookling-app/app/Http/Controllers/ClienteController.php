@@ -27,9 +27,9 @@ class ClienteController extends Controller
         return Redirect::to('/');
     }
 
-    public function gerenciarClienteShow(Cliente $id){
+    public function formAlterarCliente(Cliente $id){
 
-        return view('xxxx',['registrosClientes' => $id]);
+        return view('formularioAlterarCliente',['registrosClientes' => $id]);
     }
     
     public function gerenciarCliente(Request $request){
@@ -46,7 +46,7 @@ class ClienteController extends Controller
         $id->delete();
         return Redirect::to('/');
     }
-
+    
     public function alterClie(Cliente $id, Request $request){
         $dadosValidos = $request->validate([
             'nome' => 'string|required',
@@ -55,7 +55,7 @@ class ClienteController extends Controller
         ]);
         $id->fill($dadosValidos);
         $id->save();
-        return Redirect::route('/');
+        return Redirect::to('/');
     }
 
 
