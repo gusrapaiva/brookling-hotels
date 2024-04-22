@@ -1,5 +1,6 @@
 # brookling-hotels
 Projeto de um site de reservas em Laravel.
+Minha primeira experiência com MVC.
 
 ![image](https://github.com/gusrapaiva/brookling-hotels/assets/127103850/cddce001-0d0b-4cc2-8754-83b5ae6b9ba9)
 
